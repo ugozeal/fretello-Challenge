@@ -8,11 +8,11 @@
 import Foundation
 
 struct SessionModel: Codable {
-    var name, practicedOnDate: String?
-    var exercise: [ExerciseModel]
+    var name, practicedOnDate: String
+    var exercises: [ExerciseModel]
 }
 
 struct ExerciseModel: Codable {
-    var exerciseId, name: String?
-    var practicedAtBpm: Int?
+    var exerciseId, name: String
+    var practicedAtBpm: Int
 }

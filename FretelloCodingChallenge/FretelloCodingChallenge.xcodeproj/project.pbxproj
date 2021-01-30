@@ -3,12 +3,17 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		34CAC0F6C560DF6ED50F8662 /* Pods_FretelloCodingChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74BD806AA2DFE813ACFE1D48 /* Pods_FretelloCodingChallengeTests.framework */; };
 		AFF533F60DF79D9DE813E690 /* Pods_FretelloCodingChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6C6C136E9CF842BF4C97571 /* Pods_FretelloCodingChallenge.framework */; };
+		E2590DDC25C5473300A34B87 /* StringConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2590DDB25C5473300A34B87 /* StringConstants.swift */; };
+		E2590DE425C5480400A34B87 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2590DE325C5480400A34B87 /* DataLoader.swift */; };
+		E2590DE925C5492600A34B87 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2590DE825C5492600A34B87 /* UIViewController+Extension.swift */; };
+		E2590DF025C54A1000A34B87 /* SessionTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2590DEF25C54A1000A34B87 /* SessionTableCell.swift */; };
+		E2590DF825C54B8E00A34B87 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2590DF725C54B8E00A34B87 /* UIView+Extension.swift */; };
 		E26C604425C40CB500E9237E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26C604325C40CB500E9237E /* AppDelegate.swift */; };
 		E26C604625C40CB500E9237E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26C604525C40CB500E9237E /* SceneDelegate.swift */; };
 		E26C604825C40CB500E9237E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26C604725C40CB500E9237E /* MainViewController.swift */; };
@@ -47,6 +52,11 @@
 		B6C6C136E9CF842BF4C97571 /* Pods_FretelloCodingChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FretelloCodingChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B73CCA3B1BFD2E3F4D6886BE /* Pods-FretelloCodingChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FretelloCodingChallengeTests.release.xcconfig"; path = "Target Support Files/Pods-FretelloCodingChallengeTests/Pods-FretelloCodingChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
 		D0247A39A6FEF9C59B8B6D3A /* Pods-FretelloCodingChallenge-FretelloCodingChallengeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FretelloCodingChallenge-FretelloCodingChallengeUITests.release.xcconfig"; path = "Target Support Files/Pods-FretelloCodingChallenge-FretelloCodingChallengeUITests/Pods-FretelloCodingChallenge-FretelloCodingChallengeUITests.release.xcconfig"; sourceTree = "<group>"; };
+		E2590DDB25C5473300A34B87 /* StringConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringConstants.swift; sourceTree = "<group>"; };
+		E2590DE325C5480400A34B87 /* DataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataLoader.swift; sourceTree = "<group>"; };
+		E2590DE825C5492600A34B87 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		E2590DEF25C54A1000A34B87 /* SessionTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionTableCell.swift; sourceTree = "<group>"; };
+		E2590DF725C54B8E00A34B87 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		E26C604025C40CB500E9237E /* FretelloCodingChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FretelloCodingChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E26C604325C40CB500E9237E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E26C604525C40CB500E9237E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,8 +121,32 @@
 				A5DB74948ADFE241F0E1B9FD /* Pods-FretelloCodingChallengeTests.debug.xcconfig */,
 				B73CCA3B1BFD2E3F4D6886BE /* Pods-FretelloCodingChallengeTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		E2590DDA25C5471C00A34B87 /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				E2590DDB25C5473300A34B87 /* StringConstants.swift */,
+			);
+			path = Strings;
+			sourceTree = "<group>";
+		};
+		E2590DED25C549B600A34B87 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E2590DE825C5492600A34B87 /* UIViewController+Extension.swift */,
+				E2590DF725C54B8E00A34B87 /* UIView+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E2590DEE25C549E700A34B87 /* SessionCell */ = {
+			isa = PBXGroup;
+			children = (
+				E2590DEF25C54A1000A34B87 /* SessionTableCell.swift */,
+			);
+			path = SessionCell;
 			sourceTree = "<group>";
 		};
 		E26C603725C40CB500E9237E = {
@@ -141,11 +175,13 @@
 			isa = PBXGroup;
 			children = (
 				E26C604325C40CB500E9237E /* AppDelegate.swift */,
+				E2590DEE25C549E700A34B87 /* SessionCell */,
+				E2590DED25C549B600A34B87 /* Extensions */,
+				E2590DDA25C5471C00A34B87 /* Strings */,
 				E26C607A25C40EA100E9237E /* Scene */,
 				E26C607925C40E9000E9237E /* Model */,
 				E26C604525C40CB500E9237E /* SceneDelegate.swift */,
 				E26C607B25C40EB000E9237E /* DataLoader */,
-				E26C604725C40CB500E9237E /* MainViewController.swift */,
 				E26C604C25C40CB800E9237E /* Assets.xcassets */,
 				E26C604E25C40CB800E9237E /* LaunchScreen.storyboard */,
 				E26C605125C40CB800E9237E /* Info.plist */,
@@ -182,6 +218,7 @@
 		E26C607A25C40EA100E9237E /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				E26C604725C40CB500E9237E /* MainViewController.swift */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -189,6 +226,7 @@
 		E26C607B25C40EB000E9237E /* DataLoader */ = {
 			isa = PBXGroup;
 			children = (
+				E2590DE325C5480400A34B87 /* DataLoader.swift */,
 			);
 			path = DataLoader;
 			sourceTree = "<group>";
@@ -432,7 +470,12 @@
 			files = (
 				E26C604825C40CB500E9237E /* MainViewController.swift in Sources */,
 				E26C604425C40CB500E9237E /* AppDelegate.swift in Sources */,
+				E2590DE425C5480400A34B87 /* DataLoader.swift in Sources */,
+				E2590DF825C54B8E00A34B87 /* UIView+Extension.swift in Sources */,
 				E26C607D25C40F7800E9237E /* SessionModel.swift in Sources */,
+				E2590DE925C5492600A34B87 /* UIViewController+Extension.swift in Sources */,
+				E2590DF025C54A1000A34B87 /* SessionTableCell.swift in Sources */,
+				E2590DDC25C5473300A34B87 /* StringConstants.swift in Sources */,
 				E26C604625C40CB500E9237E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
