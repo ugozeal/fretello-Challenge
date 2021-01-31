@@ -14,6 +14,7 @@ class MainViewController: UIViewController {
     
     //MARK: Views
     var sessionListTableView = UITableView()
+    var sectionHeader = UIView()
     
     //MARK: Overrides
     override func viewDidLoad() {
@@ -44,6 +45,7 @@ class MainViewController: UIViewController {
             make.bottomMargin.equalTo(view)
         }
     }
+
     
     //MARK: Helpers
     func reloadTableView() {
@@ -57,12 +59,40 @@ class MainViewController: UIViewController {
 
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return sesionList[section].exercises.count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 60
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let sectionHeader = UIView()
+        sectionHeader.backgroundColor = ColorConstants.defaultGray500
+        
+        let SectionNameLabel = UILabel()
+        SectionNameLabel.text = (sesionList[section].name).uppercased()
+        SectionNameLabel.textColor = .black
+        SectionNameLabel.font = UIFont.boldSystemFont(ofSize: 18)
+        SectionNameLabel.frame = CGRect(x: 20, y: -2 , width: self.view.frame.width, height: 50)
+        sectionHeader.addSubview(SectionNameLabel)
+        
+        let dateLabel = UILabel()
+        dateLabel.text = String((sesionList[section].practicedOnDate).prefix(10) )
+        dateLabel.textColor = .black
+        dateLabel.font = UIFont.boldSystemFont(ofSize: 10)
+        dateLabel.frame = CGRect(x: 20, y: 15 , width: self.view.frame.width, height: 50)
+        sectionHeader.addSubview(dateLabel)
+        return sectionHeader
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
         return sesionList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = sessionListTableView.dequeueReusableCell(withIdentifier: StringConstants.cellId, for: indexPath) as? SessionTableCell
-        let exercises = sesionList[indexPath.row]
+        let exercises = sesionList[indexPath.section].exercises[indexPath.row]
         cell?.setupSessionCell(exercises: exercises)
         return cell ?? UITableViewCell()
     }

@@ -13,6 +13,12 @@ enum StringConstants {
     static let oops = "OOPS!!!"
     static let ok = "Ok"
     static let fatalError = "init(coder:) has not been implemented"
+    static let date = "Date: "
+    static let exerciseId = "Excercise Id: "
+    static let exerciseName = "Excercise Name: "
+    static let heartRate = "Heart Rate: "
+    static let bpm = "Bpm"
+    static let practisedAt = "Practiced at"
 }
 
 enum URLConstants {

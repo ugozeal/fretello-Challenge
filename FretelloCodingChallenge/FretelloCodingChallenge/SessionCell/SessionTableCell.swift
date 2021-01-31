@@ -37,12 +37,11 @@ class SessionTableCell: UITableViewCell {
     }
     
     //MARK: Actions
-    func setupSessionCell(exercises: SessionModel) {
-        for exercise in exercises.exercises {
-            excerciseNameLabel.text = exercise.name
-            exerciseBpmLabel.text = String(exercise.practicedAtBpm)
-            excerciseIdLabel.text = exercise.exerciseId
-        }
+    func setupSessionCell(exercises: ExerciseModel) {
+        
+        excerciseNameLabel.text = "\(StringConstants.exerciseName) \(exercises.name)"
+        exerciseBpmLabel.text = "\(StringConstants.practisedAt) \(String(exercises.practicedAtBpm)) \(StringConstants.bpm)"
+            excerciseIdLabel.text = exercises.exerciseId
     }
     
     func setupCardView() {
@@ -56,17 +55,17 @@ class SessionTableCell: UITableViewCell {
     }
     
     func setupExcerciseBpmLabel() {
-        cardView.addSubview(exerciseBpmLabel)
-        exerciseBpmLabel.textAlignment = .center
-        exerciseBpmLabel.text = "1"
-        exerciseBpmLabel.textColor = .black
-        exerciseBpmLabel.layer.cornerRadius = 30
-        exerciseBpmLabel.clipsToBounds = true
-        exerciseBpmLabel.backgroundColor = ColorConstants.defaultGray500
+        cardView.addSubview(excerciseIdLabel)
+        excerciseIdLabel.textAlignment = .center
+        excerciseIdLabel.text = "1"
+        excerciseIdLabel.textColor = .black
+        excerciseIdLabel.layer.cornerRadius = 30
+        excerciseIdLabel.clipsToBounds = true
+        excerciseIdLabel.backgroundColor = ColorConstants.defaultGray500
         
-        exerciseBpmLabel.snp.makeConstraints { (make) in
+        excerciseIdLabel.snp.makeConstraints { (make) in
             make.centerY.equalTo(cardView)
-            make.left.equalTo(40)
+            make.left.equalTo(20)
             make.width.equalTo(60)
             make.height.equalTo(60)
         }
@@ -79,7 +78,7 @@ class SessionTableCell: UITableViewCell {
         sessionNameLabel.textColor = ColorConstants.nameLabelColor
         sessionNameLabel.snp.makeConstraints { (make) in
             make.top.equalTo(cardView.snp.top).offset(20)
-            make.left.equalTo(exerciseBpmLabel.snp.right).offset(20)
+            make.left.equalTo(excerciseIdLabel.snp.right).offset(20)
         }
     }
     
@@ -89,17 +88,17 @@ class SessionTableCell: UITableViewCell {
         practiceDateLabel.textColor = ColorConstants.defaultGray500
         practiceDateLabel.snp.makeConstraints { (make) in
             make.top.equalTo(sessionNameLabel.snp.bottom).offset(5)
-            make.left.equalTo(exerciseBpmLabel.snp.right).offset(20)
+            make.left.equalTo(excerciseIdLabel.snp.right).offset(20)
         }
     }
     
     func setupExcerciseIdLabel() {
-        cardView.addSubview(excerciseIdLabel)
-        excerciseIdLabel.font = UIFont.systemFont(ofSize: 13)
-        excerciseIdLabel.textColor = ColorConstants.defaultGray500
-        excerciseIdLabel.snp.makeConstraints { (make) in
+        cardView.addSubview(exerciseBpmLabel)
+        exerciseBpmLabel.font = UIFont.systemFont(ofSize: 13)
+        exerciseBpmLabel.textColor = ColorConstants.defaultGray500
+        exerciseBpmLabel.snp.makeConstraints { (make) in
             make.centerY.equalTo(cardView).offset(10)
-            make.left.equalTo(exerciseBpmLabel.snp.right).offset(20)
+            make.left.equalTo(excerciseIdLabel.snp.right).offset(20)
         }
     }
     
@@ -109,7 +108,7 @@ class SessionTableCell: UITableViewCell {
         excerciseNameLabel.textColor = ColorConstants.defaultGray500 
         excerciseNameLabel.snp.makeConstraints { (make) in
             make.centerY.equalTo(cardView).offset(-10)
-            make.left.equalTo(exerciseBpmLabel.snp.right).offset(20)
+            make.left.equalTo(excerciseIdLabel.snp.right).offset(20)
         }
     }
     
