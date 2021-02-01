@@ -19,10 +19,12 @@ enum StringConstants {
     static let heartRate = "Heart Rate: "
     static let bpm = "Bpm"
     static let practisedAt = "Practiced at"
+    static let maxValue = "Maximum Practice Performance: "
 }
 
 enum URLConstants {
     static let APIURL = "http://codingtest.fretello.com:3000/data/sessions.json"
+    static let ImageURL = "http://codingtest.fretello.com:3000/img/"
 }
 
 enum ColorConstants {

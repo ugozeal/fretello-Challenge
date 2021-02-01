@@ -18,18 +18,19 @@ class SessionTableCell: UITableViewCell {
     var excerciseIdLabel = UILabel()
     var excerciseNameLabel = UILabel()
     var exerciseBpmLabel = UILabel()
+    var exerciseImageView = UIImageView()
 
 
     //MARK: Overrides
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupCardView()
-        setupExcerciseBpmLabel()
+        setupSessionImage()
 
         setupSessionNameLabel()
         setupPracticeDateLabel()
         setupExcerciseNameLabel()
-        setupExcerciseIdLabel()
+        setupBPMLabel()
     }
     
     required init?(coder: NSCoder) {
@@ -38,10 +39,12 @@ class SessionTableCell: UITableViewCell {
     
     //MARK: Actions
     func setupSessionCell(exercises: ExerciseModel) {
-        
+        guard let url = URL(string: "\(URLConstants.ImageURL)\(exercises.exerciseId).png") else { return }
+        UIImage.loadFrom(url: url) { image in
+            self.exerciseImageView.image = image
+        }
         excerciseNameLabel.text = "\(StringConstants.exerciseName) \(exercises.name)"
         exerciseBpmLabel.text = "\(StringConstants.practisedAt) \(String(exercises.practicedAtBpm)) \(StringConstants.bpm)"
-            excerciseIdLabel.text = exercises.exerciseId
     }
     
     func setupCardView() {
@@ -54,16 +57,12 @@ class SessionTableCell: UITableViewCell {
         }
     }
     
-    func setupExcerciseBpmLabel() {
-        cardView.addSubview(excerciseIdLabel)
-        excerciseIdLabel.textAlignment = .center
-        excerciseIdLabel.text = "1"
-        excerciseIdLabel.textColor = .black
-        excerciseIdLabel.layer.cornerRadius = 30
-        excerciseIdLabel.clipsToBounds = true
-        excerciseIdLabel.backgroundColor = ColorConstants.defaultGray500
-        
-        excerciseIdLabel.snp.makeConstraints { (make) in
+    func setupSessionImage() {
+        cardView.addSubview(exerciseImageView)
+        exerciseImageView.layer.cornerRadius = 30
+        exerciseImageView.clipsToBounds = true
+        exerciseImageView.contentMode = .scaleAspectFill
+        exerciseImageView.snp.makeConstraints { (make) in
             make.centerY.equalTo(cardView)
             make.left.equalTo(20)
             make.width.equalTo(60)
@@ -78,7 +77,7 @@ class SessionTableCell: UITableViewCell {
         sessionNameLabel.textColor = ColorConstants.nameLabelColor
         sessionNameLabel.snp.makeConstraints { (make) in
             make.top.equalTo(cardView.snp.top).offset(20)
-            make.left.equalTo(excerciseIdLabel.snp.right).offset(20)
+            make.left.equalTo(exerciseImageView.snp.right).offset(20)
         }
     }
     
@@ -88,17 +87,17 @@ class SessionTableCell: UITableViewCell {
         practiceDateLabel.textColor = ColorConstants.defaultGray500
         practiceDateLabel.snp.makeConstraints { (make) in
             make.top.equalTo(sessionNameLabel.snp.bottom).offset(5)
-            make.left.equalTo(excerciseIdLabel.snp.right).offset(20)
+            make.left.equalTo(exerciseImageView.snp.right).offset(20)
         }
     }
     
-    func setupExcerciseIdLabel() {
+    func setupBPMLabel() {
         cardView.addSubview(exerciseBpmLabel)
         exerciseBpmLabel.font = UIFont.systemFont(ofSize: 13)
         exerciseBpmLabel.textColor = ColorConstants.defaultGray500
         exerciseBpmLabel.snp.makeConstraints { (make) in
             make.centerY.equalTo(cardView).offset(10)
-            make.left.equalTo(excerciseIdLabel.snp.right).offset(20)
+            make.left.equalTo(exerciseImageView.snp.right).offset(20)
         }
     }
     
@@ -108,7 +107,7 @@ class SessionTableCell: UITableViewCell {
         excerciseNameLabel.textColor = ColorConstants.defaultGray500 
         excerciseNameLabel.snp.makeConstraints { (make) in
             make.centerY.equalTo(cardView).offset(-10)
-            make.left.equalTo(excerciseIdLabel.snp.right).offset(20)
+            make.left.equalTo(exerciseImageView.snp.right).offset(20)
         }
     }
     

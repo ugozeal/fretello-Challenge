@@ -34,7 +34,9 @@ extension DataLoader {
             guard let json = result else {
                 return
             }
-            success(json)
+            DispatchQueue.main.async {
+                success(json)
+            }
         })
         
         task.resume()
