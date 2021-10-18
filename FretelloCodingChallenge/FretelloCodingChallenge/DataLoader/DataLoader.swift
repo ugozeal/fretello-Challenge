@@ -14,7 +14,6 @@ final class DataLoader {
 extension DataLoader {
     public func getData(success: @escaping ([SessionModel]) -> (), failure: @escaping (String) -> ()) {
         let url = URLConstants.APIURL
-        
         let task = URLSession.shared.dataTask(with: URL(string: url)!, completionHandler: { data, response,error in
             guard let data = data, error == nil else {
                 return

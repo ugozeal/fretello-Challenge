@@ -14,58 +14,10 @@
             filePath = "FretelloCodingChallenge/DataLoader/DataLoader.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
             landmarkName = "getData(success:failure:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "1EEFB21F-0515-45C4-A2F1-62E3610A1B20"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FretelloCodingChallenge/DataLoader/DataLoader.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
-            landmarkName = "getData(success:failure:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "1EEFB21F-0515-45C4-A2F1-62E3610A1B20 - 75d5e5760cf29c58"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "FretelloCodingChallenge.DataLoader.getData(success: (Swift.Array&lt;FretelloCodingChallenge.SessionModel&gt;) -&gt; (), failure: (Swift.String) -&gt; ()) -&gt; ()"
-                  moduleName = "FretelloCodingChallenge"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Ugozeal/Desktop/fretello-Challenge/FretelloCodingChallenge/FretelloCodingChallenge/DataLoader/DataLoader.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "18"
-                  endingLineNumber = "18"
-                  offsetFromSymbolStart = "240">
-               </Location>
-               <Location
-                  uuid = "1EEFB21F-0515-45C4-A2F1-62E3610A1B20 - 8ae86954cb366c8d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in FretelloCodingChallenge.DataLoader.getData(success: (Swift.Array&lt;FretelloCodingChallenge.SessionModel&gt;) -&gt; (), failure: (Swift.String) -&gt; ()) -&gt; ()"
-                  moduleName = "FretelloCodingChallenge"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Ugozeal/Desktop/fretello-Challenge/FretelloCodingChallenge/FretelloCodingChallenge/DataLoader/DataLoader.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "19"
-                  endingLineNumber = "19"
-                  offsetFromSymbolStart = "369">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -78,8 +30,8 @@
             filePath = "FretelloCodingChallenge/DataLoader/DataLoader.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
             landmarkName = "getData(success:failure:)"
             landmarkType = "7">
          </BreakpointContent>

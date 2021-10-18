@@ -7,6 +7,7 @@ target 'FretelloCodingChallenge' do
 
   # Pods for FretelloCodingChallenge
 	pod 'SnapKit', '~> 5.0'
+	pod 'Kingfisher', '~> 6.0'
   target 'FretelloCodingChallengeTests' do
     inherit! :search_paths
     # Pods for testing

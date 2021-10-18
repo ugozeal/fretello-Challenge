@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Kingfisher
 
 class SessionTableCell: UITableViewCell {
     //MARK: Properties
@@ -39,10 +40,16 @@ class SessionTableCell: UITableViewCell {
     
     //MARK: Actions
     func setupSessionCell(exercises: ExerciseModel) {
-        guard let url = URL(string: "\(URLConstants.ImageURL)\(exercises.exerciseId).png") else { return }
-        UIImage.loadFrom(url: url) { image in
-            self.exerciseImageView.image = image
+        DispatchQueue.main.async {
+            do {
+                guard let url = URL(string: "\(URLConstants.ImageURL)\(exercises.exerciseId).png") else { return }
+                self.exerciseImageView.kf.setImage(with: url)
+//                UIImage.loadFrom(url: url) { image in
+//                    self.exerciseImageView.kf.setImage(with: url)
+//                }
+            }
         }
+        
         excerciseNameLabel.text = "\(StringConstants.exerciseName) \(exercises.name)"
         exerciseBpmLabel.text = "\(StringConstants.practisedAt) \(String(exercises.practicedAtBpm)) \(StringConstants.bpm)"
     }
